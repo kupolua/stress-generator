@@ -10,6 +10,6 @@ RUN \
 ADD stress-generate.sh /opt/stress
 RUN chmod 700 /opt/stress/stress-generate.sh
 
-ADD sampletext /opt/stress/input
+ADD input/sampletext /opt/stress/input
 
 CMD cat /opt/stress/input/sampletext | /opt/stress/stress-generate.sh

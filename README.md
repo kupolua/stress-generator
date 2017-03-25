@@ -1,1 +1,1 @@
-# stress-generator
+# initial stress-generator

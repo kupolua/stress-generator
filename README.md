@@ -1,6 +1,6 @@
 #Usage examples
 
-expects HOST and PORT environment variables
+Expects HOST and PORT environment variables
 
 Benchmark has default text file with 25091 words.
 

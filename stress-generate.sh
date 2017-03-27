@@ -26,7 +26,7 @@ echo "Number of words: " ${#words[@]}
 function buildImage {
     word=$1
 
-        `curl -X PUT -H "${headerAccept}" -H "${headerContentType}" -s -d '{"text":"'${word}'", "ignoreCache":false}' 'http:
+	`curl -X PUT -H "${headerAccept}" -H "${headerContentType}" -s -d '{"text":"'${word}'", "ignoreCache":false}' 'http://'${HOST}':'${PORT}'/to-image' &>/dev/null`
 }
 
 START=$(date +%s);
@@ -39,7 +39,7 @@ for word in "${words[@]}"
 done
 wait
 
-END=$(date +%s);
+END=$(date +%s)
 duration=$(echo $((END-START)) | awk '{printf "%d:%02d:%02d", $1/3600, ($1/60)%60, $1%60}')
 
 echo "benchmark stopped at:" `date`
@@ -47,3 +47,4 @@ echo "benchmark stopped at:" `date`
 GREEN='\033[0;32m'
 NC='\033[0m'
 printf "benchmark duration:  ${GREEN}${duration}${NC}\n"
+
